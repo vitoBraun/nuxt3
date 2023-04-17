@@ -1,22 +1,7 @@
 <template>
-  <h3>Index page</h3>
-  {{ name }}
-  <div>
-    <ul>
-      <li v-for="user in users" :key="user">
-        <NuxtLink :to="'users/' + user"> user number {{ user }}</NuxtLink>
-      </li>
-    </ul>
-  </div>
+  <h1>Main page</h1>
 </template>
 
 <script lang="ts">
-export default {
-  data() {
-    return {
-      name: "Victor",
-      users: [1, 2, 3, 4, 5, 6, 7],
-    };
-  },
-};
+export default {};
 </script>
