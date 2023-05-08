@@ -17,8 +17,8 @@
               class="nav-link"
               active-class="active"
               aria-current="page"
-              to="/users"
-              >Users</NuxtLink
+              to="/items"
+              >Items</NuxtLink
             >
           </li>
 
