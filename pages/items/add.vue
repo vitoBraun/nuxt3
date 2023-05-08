@@ -6,9 +6,10 @@
     <TextField v-model="name" label="Название" />
     <TextField v-model="surname" label="Описания" />
     <TextField v-model="price" label="Цена" type="number" />
-    <button class="btn btn-success my-2" @click="submitForm()">Добавить</button>
-    <v-btn @click="submitForm()">Добавить</v-btn>
+    <v-btn @click="submitForm()" variant="tonal" color="green">Добавить</v-btn>
   </v-form>
+
+  <Notification v-if="formSent" text="" thesis="Форма отправлена!" />
 </template>
 
 <script lang="ts">

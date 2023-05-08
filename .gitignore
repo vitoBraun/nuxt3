@@ -8,3 +8,4 @@ node_modules
 dist
 .DS_Store
 postgres/data
+postgres/pgadmin-data
