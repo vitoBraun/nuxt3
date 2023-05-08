@@ -1,6 +1,5 @@
 <script lang="ts">
 export default {
-  name: "TextField",
   props: {
     label: String,
     name: String,
@@ -10,25 +9,15 @@ export default {
   data() {
     return { internalValue: this.value, inputType: this.type || "text" };
   },
-  watch: {
-    internalValue(newValue) {
-      this.$emit("update:value", newValue);
-    },
-    value(newValue) {
-      this.internalValue = newValue;
-    },
-  },
 };
 </script>
 
 <template>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">{{ label }}</label>
-    <input
-      v-bind:type="inputType"
-      class="form-control"
-      id="formGroupExampleInput2"
-      v-model="internalValue"
-    />
-  </div>
+  <v-text-field
+    v-bind:label="label"
+    class="mt-4"
+    v-bind:type="inputType"
+    @input="$emit('update:modelValue', internalValue)"
+    v-model="internalValue"
+  />
 </template>
