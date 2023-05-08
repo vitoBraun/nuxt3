@@ -13,8 +13,9 @@
     "nuxt": "^3.4.1"
   },
   "dependencies": {
-    "bootstrap": "^5.2.3",
     "pg": "^8.10.0",
-    "sequelize": "^6.31.1"
+    "sass": "^1.62.1",
+    "sequelize": "^6.31.1",
+    "vuetify": "^3.2.2"
   }
 }
