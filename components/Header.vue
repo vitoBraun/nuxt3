@@ -11,8 +11,8 @@
       height: 80px;
     "
   >
-    <h1 style="margin: auto 0">IT-TEMA.RU</h1></v-app-bar
-  >
+    <NuxtLink to="/"><h1 style="margin: auto 30px">IT-TEMA.RU</h1></NuxtLink>
+  </v-app-bar>
 </template>
 
 <style>

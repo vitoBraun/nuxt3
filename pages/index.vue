@@ -1,25 +1,7 @@
 <template>
-  <title>Какое-нибудь название</title>
-  <v-card color="background">
-    <v-navigation-drawer
-      width="300"
-      flat
-      border="0"
-      color="background"
-      style="padding-left: 30pt; padding-top: 30px"
-    >
-      <v-list>
-        <v-list-item
-          variant="plain"
-          v-for="topic in topics"
-          :key="topic.id"
-          link
-          style="font-size: 1.3em"
-        >
-          {{ topic.title }}
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+  <div>
+    <title>Какое-нибудь название</title>
+
     <v-main class="mx-10 mt-10" color="background" flat>
       <v-card
         v-for="post in posts"
@@ -29,9 +11,14 @@
         max-width="840"
         height="230"
         link
-        :to="`/api/posts/${post.id}`"
+        :to="`/posts/${post.id}`"
       >
-        <v-img :src="post.img" height="100%" cover class="text-white">
+        <v-img
+          :src="`/img/${post.coverUrl}`"
+          height="100%"
+          cover
+          class="text-white"
+        >
           <v-card-subtitle class="pt-4 shadowed-text">
             Просмотров 10
           </v-card-subtitle>
@@ -45,22 +32,13 @@
         >
       </v-card>
     </v-main>
-    <v-navigation-drawer location="right" flat border="0" color="background">
-      <v-list>
-        <v-list-item title="Drawer right"></v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-  </v-card>
+    >
+  </div>
 </template>
 <script lang="ts" setup>
-const { data: posts } = await useLazyFetch("/api/posts");
-const { data: topics } = await useLazyFetch("/api/topics");
+const { data: posts } = await useFetch("/api/posts");
 </script>
-
-<style scoped>
-.app {
-  font-family: Inter, Helvetica, Arial, sans-serif;
-}
+<style>
 .shadowed-text {
   text-shadow: 0px 0px 20px #000000, 0px 0px 20px #000000, 0px 0px 20px #000000,
     0px 0px 20px #000000;

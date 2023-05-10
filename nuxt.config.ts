@@ -9,4 +9,5 @@ export default defineNuxtConfig({
       "process.env.DEBUG": false,
     },
   },
+  modules: ["nuxt-icon"],
 });
