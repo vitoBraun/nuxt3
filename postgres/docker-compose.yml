@@ -4,11 +4,10 @@ services:
     container_name: pgdb
     image: postgres
     restart: always
-    user: postgres
     environment:
-      POSTGRES_USER: test
-      POSTGRES_PASSWORD: example
-      POSTGRES_DB: mydb
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=example
+      - POSTGRES_DB=mydb
     volumes:
       - ./data:/var/lib/postgresql/data
     ports:
