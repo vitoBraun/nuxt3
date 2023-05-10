@@ -1,5 +1,3 @@
 <template>
-  <Header />
-  <div class="container"><slot /></div>
-  <Footer />
+  <v-app color="background"> <Header /> <slot /></v-app>
 </template>

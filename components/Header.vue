@@ -1,33 +1,26 @@
 <template>
-  <title>Какое-нибудь название</title>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <NuxtLink
-              class="nav-link"
-              active-class="active"
-              aria-current="page"
-              to="/"
-              >Home</NuxtLink
-            >
-          </li>
-          <li class="nav-item">
-            <NuxtLink
-              class="nav-link"
-              active-class="active"
-              aria-current="page"
-              to="/items"
-              >Items</NuxtLink
-            >
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <v-app-bar
+    class="app-bar"
+    flat
+    style="
+      background: rgba(var(--v-theme-background), 0.77);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10.1px);
+      -webkit-backdrop-filter: blur(10.1px);
+      height: 80px;
+    "
+  >
+    <h1 style="margin: auto 0">IT-TEMA.RU</h1></v-app-bar
+  >
 </template>
+
+<style>
+.app-bar {
+  background: rgba(0, 0, 0, 0.77);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10.1px);
+  -webkit-backdrop-filter: blur(10.1px);
+}
+</style>
