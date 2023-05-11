@@ -1,6 +1,6 @@
 <template>
   <div>
-    <title>Какое-нибудь название</title>
+    <title>Название сайта</title>
 
     <v-main class="mx-10 mt-10" color="background" flat>
       <v-card
@@ -14,20 +14,20 @@
         :to="`/posts/${post.id}`"
       >
         <v-img
-          :src="`/img/${post.coverUrl}`"
+          :src="`http://localhost:1337${post.attributes.images.data[0].attributes.url}`"
           height="100%"
           cover
           class="text-white"
         >
           <v-card-subtitle class="pt-4 shadowed-text">
-            Просмотров 10
+            Просмотров: {{ post.attributes.views }}
           </v-card-subtitle>
           <v-card-title class="shadowed-text my-50">{{
-            post.title
+            post.attributes.title
           }}</v-card-title>
 
           <v-card-text class="shadowed-text">{{
-            post.content
+            post.attributes.fullText
           }}</v-card-text></v-img
         >
       </v-card>
@@ -36,7 +36,9 @@
   </div>
 </template>
 <script lang="ts" setup>
-const { data: posts } = await useFetch("/api/posts");
+import { getData } from "~/utils/api";
+const { data } = await useFetch("http://localhost:1337/api/posts?populate=*");
+const posts = getData(data);
 </script>
 <style>
 .shadowed-text {
