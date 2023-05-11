@@ -36,9 +36,10 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { IPost } from "~/models/models";
 import { getData } from "~/utils/api";
 const { data } = await useFetch("http://localhost:1337/api/posts?populate=*");
-const posts = getData(data);
+const posts: IPost[] = getData(data);
 </script>
 <style>
 .shadowed-text {

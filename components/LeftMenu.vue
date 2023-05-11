@@ -29,11 +29,8 @@
 </template>
 
 <script setup lang="ts">
-import { ITopic } from "~/models/Topic";
+import { ITopic } from "~/models/models";
 
-const { data } = await useFetch<ITopic[]>(
-  "http://localhost:1337/api/topics?populate=*"
-);
-const topics = getData(data);
-
+const { data } = await useFetch("http://localhost:1337/api/topics?populate=*");
+const topics: ITopic[] = getData(data);
 </script>
