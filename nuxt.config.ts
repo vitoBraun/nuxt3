@@ -10,4 +10,9 @@ export default defineNuxtConfig({
     },
   },
   modules: ["nuxt-icon"],
+  runtimeConfig: {
+    public: {
+      API_HOST: process.env.API_HOST,
+    },
+  },
 });

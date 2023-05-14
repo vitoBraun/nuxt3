@@ -6,12 +6,21 @@
       <v-card
         v-for="post in posts"
         :key="post.id"
-        class="mb-10 rounded-xl mx-auto"
+        class="mb-15 rounded-xl mx-auto"
         elevation="10"
         max-width="840"
         height="230"
         link
         :to="`/posts/${post.id}`"
+        style="
+          background: linear-gradient(
+              to bottom,
+              rgba(0, 0, 0, 0),
+              rgba(0, 0, 0, 1)
+            ),
+            url('your-image-url.jpg');
+          background-blend-mode: overlay;
+        "
       >
         <v-img
           :src="`http://localhost:1337${post.attributes.images.data[0].attributes.url}`"
@@ -35,15 +44,9 @@
     >
   </div>
 </template>
+
 <script lang="ts" setup>
+import usePosts from "~/hooks/posts";
 import { IPost } from "~/models/models";
-import { getData } from "~/utils/api";
-const { data } = await useFetch("http://localhost:1337/api/posts?populate=*");
-const posts: IPost[] = getData(data);
+const { posts } as IPost[] = await usePosts();
 </script>
-<style>
-.shadowed-text {
-  text-shadow: 0px 0px 20px #000000, 0px 0px 20px #000000, 0px 0px 20px #000000,
-    0px 0px 20px #000000;
-}
-</style>

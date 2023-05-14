@@ -33,4 +33,5 @@ import { ITopic } from "~/models/models";
 
 const { data } = await useFetch("http://localhost:1337/api/topics?populate=*");
 const topics: ITopic[] = getData(data);
+
 </script>
